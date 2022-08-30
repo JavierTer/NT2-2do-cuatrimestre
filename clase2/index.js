@@ -6,14 +6,15 @@
 const condiciones = [
     {condicion:"debe haber pelota",valor:true},
     {condicion:"equipo 1 debe tener 11 jugadores",valor:true},
-    {condicion:"equipo 2 debe tener 11 jugadores",valor:false},
+    {condicion:"equipo 2 debe tener 11 jugadores",valor:true},
     {condicion:"todos los jugadores deben estar anotados",valor:true},
     {condicion:"las condiciones climaticas deben ser buenas",valor:false}
 ]
 
 function puedeComenzar(condiciones) {
     const noPuede = condiciones.filter(elem => elem.valor == false) 
-    if (noPuede) {
+    console.log(noPuede.length);
+    if (noPuede.length > 0) {
         let indice  = 1
         console.log('*** No es posible jugar el partido porque: ***');
         noPuede.forEach(element => {
@@ -21,7 +22,10 @@ function puedeComenzar(condiciones) {
             console.log(indice + ": " + element.condicion)
             indice++;
         });
-        //console.log(`No es posible jugar el partido por: ${noPuede.condicion}`);
+        
+    }
+    else {
+        console.log("A jugar!!!");
     }
 }
 

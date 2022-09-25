@@ -33,27 +33,33 @@ let arrayNuevo = [...unArray]
     return arrayNuevo;
 }
 
-let nuevoArray = ordenar(arraySeries, "")
-console.log(nuevoArray);
+let nuevoArray = ordenar(arraySeries, "ascendente")
+//console.log(nuevoArray);
 
-
-
-
+/*
+arraySeries.forEach((elemento) => (elemento == elemento.nombre ));
+console.log(arraySeries);
+*/
 
 
 
 
 
 function eliminarSerie(unArray, nombreSerie) {
-    let arrayNuevo = [...unArray]
-    elementoBuscado = arrayNuevo.find(nombre => nombre == nombreSerie)
-    if(elementoBuscado){
-        console.log(`Se elimino la serie ${nombreSerie}`);
-
-    }
-    else{
-        console.log(`No existe una serie con el nombre ${nombreSerie}`);
-
-    }
+    return unArray.filter(elemento => elemento.nombre != nombreSerie)
 }
+
+const serieEliminada = eliminarSerie(arraySeries, 'friends')
+
+console.log('Lo que devuelve la funcion eliminarSerie: ');
+console.log(serieEliminada);
+
+console.log('------------------------------------');
+
+console.log('El array Original');
+console.log(arraySeries);
+
+console.log('------------------------------------');
+
+
 

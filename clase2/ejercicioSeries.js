@@ -12,6 +12,9 @@ console.log(array.map(e=>e.toLocalUpperCase()));
 7) dado el array de condiciones del ejercicio 2, devolver otro con el siguiente formato: "si el valor es true, pulgar arriba, sino pulgar abajo."
 */
 
+
+//Ejercicio 3
+
 const arraySeries = [
     {nombre: "friends", año: 1998},
     {nombre: "better call saul", año: 2016},
@@ -34,15 +37,11 @@ let arrayNuevo = [...unArray]
 }
 
 let nuevoArray = ordenar(arraySeries, "ascendente")
-//console.log(nuevoArray);
-
-/*
-arraySeries.forEach((elemento) => (elemento == elemento.nombre ));
-console.log(arraySeries);
-*/
 
 
 
+
+//Ejercicio 4
 
 //Metodo filter no modifica el array original
 function eliminarSerie(unArray, nombreSerie) {
@@ -61,5 +60,14 @@ console.log(arraySeries);
 
 console.log('------------------------------------');
 
+// Ejercicio 5
+//Map no modifica el array original
 
+
+const reedefinirArray = arraySeries.map(x => 
+     `${x.nombre} (${x.año})`
+)
+
+console.log('Reordeno el array');
+console.log(reedefinirArray);
 

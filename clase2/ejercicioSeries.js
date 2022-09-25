@@ -44,7 +44,7 @@ console.log(arraySeries);
 
 
 
-
+//Metodo filter no modifica el array original
 function eliminarSerie(unArray, nombreSerie) {
     return unArray.filter(elemento => elemento.nombre != nombreSerie)
 }

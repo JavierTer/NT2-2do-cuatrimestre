@@ -71,3 +71,11 @@ const reedefinirArray = arraySeries.map(x =>
 console.log('Reordeno el array');
 console.log(reedefinirArray);
 
+//Ejercicio 6
+const pasarAMayuscula = (array)=>{
+    return array.map((elemento)=>elemento.toUpperCase())
+}
+
+const arrayDeStrings = ['hola', 'chau', 'bien', 'mal']
+
+console.log(pasarAMayuscula(arrayDeStrings))

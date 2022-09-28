@@ -12,6 +12,17 @@ console.log(array.map(e=>e.toLocalUpperCase()));
 7) dado el array de condiciones del ejercicio 2, devolver otro con el siguiente formato: "si el valor es true, pulgar arriba, sino pulgar abajo."
 */
 
+//import {condiciones} from "./index.js";
+const condiciones = [
+    {condicion:"debe haber pelota",valor:true},
+    {condicion:"equipo 1 debe tener 11 jugadores",valor:true},
+    {condicion:"equipo 2 debe tener 11 jugadores",valor:true},
+    {condicion:"todos los jugadores deben estar anotados",valor:true},
+    {condicion:"las condiciones climaticas deben ser buenas",valor:false}
+]
+
+
+console.log(condiciones);
 
 //Ejercicio 3
 
@@ -71,7 +82,7 @@ const reedefinirArray = arraySeries.map(x =>
 console.log('Reordeno el array');
 console.log(reedefinirArray);
 
-//Ejercicio 6
+//Ejercicio 6 ----------------------------------------------
 const pasarAMayuscula = (array)=>{
     return array.map((elemento)=>elemento.toUpperCase())
 }
@@ -79,3 +90,9 @@ const pasarAMayuscula = (array)=>{
 const arrayDeStrings = ['hola', 'chau', 'bien', 'mal']
 
 console.log(pasarAMayuscula(arrayDeStrings))
+
+
+// --------------------------------------------------------
+//Ejercicio 7
+👍 
+👎

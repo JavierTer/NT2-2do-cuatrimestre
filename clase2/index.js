@@ -31,4 +31,9 @@ function puedeComenzar(condiciones) {
 
 puedeComenzar(condiciones)
 
-const otroArray = condiciones.map(e=> valor?)
+//const otroArray = condiciones.map(e=> valor?)
+/*
+ export  {
+    condiciones
+ }
+ */

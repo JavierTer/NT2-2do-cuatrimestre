@@ -94,5 +94,5 @@ console.log(pasarAMayuscula(arrayDeStrings))
 
 // --------------------------------------------------------
 //Ejercicio 7
-👍 
-👎
+//👍 
+//👎

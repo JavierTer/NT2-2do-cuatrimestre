@@ -22,7 +22,6 @@ const condiciones = [
 ]
 
 
-console.log(condiciones);
 
 //Ejercicio 3
 
@@ -34,11 +33,12 @@ const arraySeries = [
     {nombre: "sherlock Holmes", año: 2002}
 ]
 
+//Para evitar la mutación del array original, se utiliza spred para tener una copia.
+
 function ordenar (unArray, condicion) {
 let arrayNuevo = [...unArray]
-    if(condicion == "ascendente"){
+    if(condicion.toUpperCase() === "ASCENDENTE"){
     arrayNuevo = arrayNuevo.sort((a,b)=> a.año - b.año)
-
     }
     else {
     arrayNuevo = arrayNuevo.sort((a,b)=> b.año -a.año)
@@ -47,9 +47,17 @@ let arrayNuevo = [...unArray]
     return arrayNuevo;
 }
 
+console.log('Se muestra el array original ------------------');
+console.log(arraySeries);
+
+
+console.log('Se ordena el array de manera ascendente ------------------------------------------');
 let nuevoArray = ordenar(arraySeries, "ascendente")
+console.log(nuevoArray);
 
-
+console.log('Se muestra como reordenar el array de manera descendente ------------------');
+nuevoArray = ordenar(arraySeries, "d")
+console.log(nuevoArray);
 
 
 //Ejercicio 4
@@ -61,7 +69,7 @@ function eliminarSerie(unArray, nombreSerie) {
 
 const serieEliminada = eliminarSerie(arraySeries, 'friends')
 
-console.log('Lo que devuelve la funcion eliminarSerie: ');
+console.log('Lo que devuelve la funcion eliminarSerie eliminando la serie frineds');
 console.log(serieEliminada);
 
 console.log('------------------------------------');
@@ -79,20 +87,29 @@ const reedefinirArray = arraySeries.map(x =>
      `${x.nombre} (${x.año})`
 )
 
-console.log('Reordeno el array');
+console.log('Reordeno el array mostrandolo de distinta forma');
 console.log(reedefinirArray);
 
 //Ejercicio 6 ----------------------------------------------
 const pasarAMayuscula = (array)=>{
-    return array.map((elemento)=>elemento.toUpperCase())
+      return array.map((elemento)=>elemento.toUpperCase())
 }
 
 const arrayDeStrings = ['hola', 'chau', 'bien', 'mal']
-
+console.log(`Se muestra el método pasar a mayuscula pasandole: ${arrayDeStrings}` );
+console.log('Se muestra el funcionamiento del método pasarAMayuscula --------------------------------');
 console.log(pasarAMayuscula(arrayDeStrings))
+
 
 
 // --------------------------------------------------------
 //Ejercicio 7
-//👍 
-//👎
+
+const a = condiciones.map(e=> e.valor?'👍' : '👎')
+
+//otra variante es armar un string
+const b = condiciones.map(e => `${e.condicion}: ${e.valor?'👍' : '👎'}`)
+
+
+console.log(a);
+console.log(b);

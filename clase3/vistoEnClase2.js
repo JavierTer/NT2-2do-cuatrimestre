@@ -47,4 +47,6 @@ async function entregarComida() {
   }
   
   entregarComida();
+
+  // Promise.race() --> retorna la 1er promesa sin importar el estado.
   

@@ -16,9 +16,14 @@
   async function inicio(competidores) {
       console.log('inicio...');
       const ganadores = cambios(competidores)
-  
-      let resultado = await Promise.all(ganadores);
-      resultado = determinarGanador(resultado)
+      try {
+        let resultado = await Promise.all(ganadores);
+        resultado = determinarGanador(resultado)
+
+      } catch (error) {
+        console.log(error);
+
+      }
   }
   
   function determinarGanador(array){
@@ -45,14 +50,15 @@
   return nuevo
   };
   
-  
   async function generarCorredor(nombre){
-      const tiempo = generarTiempo()
-      corredor = {nombre, tiempo}
-      return new Promise((resolve) => {
-          resolve(corredor)
-      })
-  }
+    const tiempo = generarTiempo()
+    corredor = {nombre, tiempo}
+    return new Promise((resolve) => {
+        resolve(corredor)
+    })
+}
+  
+ 
   
   function generarTiempo(){
       let min = 3000;

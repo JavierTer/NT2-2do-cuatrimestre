@@ -1,0 +1,3 @@
+Tomar el ejercicio de series y, en vez de imprimir por consola, alimentar
+un html con el array.
+Agregar 1 boton para mostrarlo de forma descendiente.

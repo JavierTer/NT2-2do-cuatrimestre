@@ -76,12 +76,13 @@ copia[0] = 100
 console.log("probando la copia " + copia);
 console.log("el original quedo asi " + miArrayDeNum);
 */
-//funcion  spred
+//funcion  spred ----------------------> su uso es para "desarmar" el array, lo q hace el spred es sacar los corchetes y como que quede suelto los datos
+//no hace una copia de referencia en si.
 console.log('funcion spreed');
 console.log(...miArrayDeNum);
 
 
-//MAP  ----------------------------------------------------------------------------------------// --> MUTA EL ARRAY ORIGINAL Y ADEMÁS DEVUELVE OTRO ARRAY
+//MAP  ----------------------------------------------------------------------------------------// --> NO MUTA EL ARRAY ORIGINAL Y ADEMÁS DEVUELVE OTRO ARRAY
 //Map devuelve otro array, pero va mutando cada elemento, devuelve un array de la misma cantidad de elementos segun querramos nosotros
 //itera cada elemento y lo modifica.
 //sirve para hacer alguna transformación rapida
@@ -140,6 +141,12 @@ console.log(resultFilter);
 //miArrayDeNum.forEach()  //esto funciona con callback , basicamente es como pudimos asignarle a una constante una funcion, podemos pasar una funcion como parametro
 miArrayDeNum.forEach((element) => {console.log(element)})
 
+//para mutar el original
+//nos da 3 parametros, el indice es x dnd vamos y el array entero.
+miArrayDeNum.forEach((elemento,indice,array) => (array[indice] = 'tal cosa' ))  --> aca directamente le asigna "tal cosa"   a todos
+o
+miArrayDeNum.forEach((elemento,indice,array) => (array[indice] = elemeneto * 2 )) --> aca realiza una operación para asignarlo   
+
 
 //si yo recibo una función, a y b
 /*
@@ -185,11 +192,11 @@ const arrayNumerico = [10,5,3]
 //lo podemos llamar directamente con el array para strings, funciona sin ningun parametro, lo imprime ordenado
 //console.log(miArrayLetras.sort());
 
-//esto rompe, lo que hace el sort, sin ningun parametro, es compararlo como si fuesen strings, ordena como codigo ascci, entonces NO SIRVE PARA NUMEROS
+//esto funciona para strings sin ningun parametro, ordena como codigo ascci, entonces NO SIRVE PARA NUMEROS
 //console.log(arrayNumerico.sort());
 
 //debemos manejarlo nosotros, pasandole una funcion
-//esta funcion espera que nosotros por cada elmeento le digamos, si va ordenado antes o despues.
+//esta funcion espera que nosotros por cada elemento le digamos, si va ordenado antes o despues.
 //le damos un resultado negativo o positivo
 console.log(arrayNumerico.sort((a,b)=>a - b));
 
@@ -207,12 +214,21 @@ console.log(arrayNumerico.sort((a,b)=>a - b));
 AGREGAMOS ELEMENTOS A UN ARRAY ----------------------------------------------------------------------------------------//*/
 
 
-//AGREGAR AL FINAL----------------------------------------------------------------------------------------
+//PUSH() ------->AGREGAR AL FINAL----------------------------------------------------------------------------------------
  miArrayLetras.push('l')
 console.log(miArrayLetras);
 
-//SACAR EL ULTIMO ELEMENTO CON POP----------------------------------------------------------------------------------------
+//POP() -------> SACAR EL ULTIMO ELEMENTO CON POP----------------------------------------------------------------------------------------
 miArrayLetras.pop()
 console.log(miArrayLetras);
 
+//SHIFT() -----> SACAR EL PRIMER ELEMENTO CON POP----------------------------------------------------------------------------------------
+
 console.log(miArrayLetras.shift())
+
+//UNSHIFT() -----> AGREGA UN ELEMENTO QUE SE LE PASA POR PARAMETRO AL PRINCIPIO---------------------------------------------------------------
+console.log(miArrayLetras.unshift('z'));
+
+
+//Buscar: * que me devuelva el indice de algo que buscamos
+//        * suplantar un elemento en una posicion especifica

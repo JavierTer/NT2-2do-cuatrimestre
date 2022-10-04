@@ -21,7 +21,8 @@
             :key="monedas.id" 
             :class="{primeros: moneda.rank <= 3 }"
             >
-                {{moneda.name}} ({{moneda.symbol}}) 
+                {{moneda.name}} ({{moneda.symbol}}) {{moneda.changePercent24Hr >
+                    0?'⬆':'⬇'}}
             </li>
         </ul>
     </div>
@@ -40,7 +41,7 @@
 
     .primeros{
         color: red;
-        font-size: 2em;
+        font-size: 1.5em;
     }
     
     

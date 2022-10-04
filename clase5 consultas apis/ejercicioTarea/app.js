@@ -29,31 +29,21 @@ const aplication = new Vue({
         ordenarPorRanking() {
 
             return this.monedas.sort((a, b) => a.rank - b.rank)
-        },
-        verificarHs(){
-            let estado
-            let arrayEstado = [];
-            for (let i = 0; i < this.monedas.length; i++) {
-                if(monedas[i].changePercent24Hr > 2) {
-                    estado = '⬆'
-                    arrayEstado.push(estado)
-                }
-                else{
-                    arrayEstado.push(estado)
-                }
-            
-            }
-            return arrayEstado
         }
-    }
-    /*
+    },
+    
     computed: {
-        ordenarPorRanking() {
-
-            return this.monedas.sort((a, b) => a.rank - b.rank)
+        verificar() {
+            this.monedas.map(e => {
+                if(e.changePercent24Hr > 1) {
+                e.changePercent24Hr = '⬆'
+            }else {
+                e.changePercent24Hr = '⬇'
+            }
+        })                
         }
     }
-    */
+    
 })
 
 //

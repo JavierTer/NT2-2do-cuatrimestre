@@ -1,0 +1,7 @@
+1) hacer una aplicacion usando Vue.js que consuma un servicio sobre criptomonedas (https://api.coincap.io/v2/assets?limit=10
+).
+presentar la lista ordenada inicialmente por ranking, con la posibilidad de ordenar tambien por nombre.
+destacar las 3 primeras segun ranking usando clases de estilos dinamicas.
+mostrar un indicador segun la propiedad changePercent24Hr. Si es positivo, mostrar ⬆ y sino ⬇ .
+
+bonus: darle estilo verde o rojo solamente al indicador segun si es positivo o negativo.

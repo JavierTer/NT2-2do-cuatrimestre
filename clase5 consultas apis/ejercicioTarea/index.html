@@ -11,15 +11,17 @@
 <body>
     <div id="app">
         <h1 class="tittle">{{texto}}</h1>
+        <br>
 
-        <button>Ranking</button>
+        
         <button v-on:click="ordenarPorNombre">Name</button>
-
+        <button v-on:click ="ordenarPorRanking">Ranking</button>
         <ul>
             <li v-for="moneda in monedas" 
             :key="monedas.id" 
+            :class="{primeros: moneda.rank <= 3 }"
             >
-                {{moneda.name}} ({{moneda.symbol}})
+                {{moneda.name}} ({{moneda.symbol}}) 
             </li>
         </ul>
     </div>
@@ -36,6 +38,10 @@
         padding: 10px;
     }
 
+    .primeros{
+        color: red;
+        font-size: 2em;
+    }
     
     
 </style>

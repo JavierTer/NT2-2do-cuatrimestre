@@ -1,49 +1,19 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
 
 <template>
   <div id="app">
-    <header>
-      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-      <div class="wrapper">
-        <HelloWorld msg="You did it!" />
-      </div>
-    </header>
-
-    <main>
-      <TheWelcome />
-    </main>
+  <!-- 
+    Router link: nos dice a donde queremos linkear en el to: hay que poner lo que pusimos en el mapeo
+    esto cnd tocas, se instancia el componente que toques (home x ej)
+  -->
+  <router-link to="/"> Home </router-link>
+  <router-link to="product"> Producto </router-link>
+   
+    <!-- 
+    Router VIEW: solo se pone el componente sin agregarle nada, ocupa 1 espacio.
+    si nosotros tenemos una estructura de columnas, ponemos el router-view y ahi se generará el reemplazo.
+  -->
+  <router-view></router-view>
+    
   </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
